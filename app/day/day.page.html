@@ -1,0 +1,22 @@
+<ion-header >
+  <ion-toolbar color="primary" >
+  	<img class="logo" src="../assets/logo.png">
+    <div class="title">Твой успешный день</div>
+    <img class="burger" src="../assets/burger.png" routerLink="/home" >
+ 	</ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+ 	<h3>Планирование успешного дня</h3>	
+	<button class="button" color="light"  (click)="addTarget()"><p>Добавить пункт в план</p> <img src="../assets/plus.png"></button>
+
+	<ul>
+		<li *ngFor="let item of dayData" >
+			<ion-label>{{item.date.hour}}:{{item.date.minutes}}</ion-label>
+			<ion-checkbox color="primary" ></ion-checkbox>
+			<ion-label>{{item.text}}</ion-label>
+		</li>
+	</ul>
+	
+</ion-content>
