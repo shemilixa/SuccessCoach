@@ -12,6 +12,12 @@ export class DayPage implements OnInit {
   ngOnInit() {
   }
 
+   public form = [
+      { val: 'Pepperoni', isChecked: true },
+      { val: 'Sausage', isChecked: false },
+      { val: 'Mushroom', isChecked: false }
+    ];
+
   dayData = [
   	{
   		'date': {
