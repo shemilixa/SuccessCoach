@@ -23,7 +23,7 @@
 
 	<ion-item>
 	  <ion-label>Время начала</ion-label>
-	  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myTimeStart" doneText="Применить" cancelText="Закрыть" ></ion-datetime>
+	  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myTimeStart" max="{{myTimeFinish}}" doneText="Применить" cancelText="Закрыть" ></ion-datetime>
 	</ion-item>
 
 	<ion-item>
