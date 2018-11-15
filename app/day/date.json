@@ -1,27 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
-
-@Component({
-  selector: 'app-day',
-  templateUrl: './day.page.html',
-  styleUrls: ['./day.page.scss'],
-})
-export class DayPage implements OnInit {
-
-  constructor(
-    public actionsheetCtrl: ActionSheetController
-  ) { }
-
-  ngOnInit() {
-  }
-
-   public form = [
-      { val: 'Pepperoni', isChecked: true },
-      { val: 'Sausage', isChecked: true },
-      { val: 'Mushroom', isChecked: true }
-    ];
-
-  dayData = [
+ [
   	{
   		'date': {
   			'hour': '06',
@@ -103,21 +80,4 @@ export class DayPage implements OnInit {
   		'url': '',
   		'active': '',
   	},
-  ];
-
-  addTarget(){
-  	//console.log('добавление дела');
-  	document.getElementById('blockNoActive').style.width="100%";
-  	let bockAddTarget = document.getElementById('addTarget');
-  	bockAddTarget.className = "addTargetOn animated bounceInUp";
-
-    let blockNoActive = document.getElementById('blockNoActive');
-
-
-  	blockNoActive.addEventListener('click', function(event){
-				bockAddTarget.className = "addTargetOff bounceInDown";
-				document.getElementById('blockNoActive').style.width="";
-  		
-  	});
-  }
-}
+  ]

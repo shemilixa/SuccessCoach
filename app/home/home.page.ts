@@ -45,7 +45,5 @@ export class HomePage {
   	},
   ];
 
-  itemSelected(item: string) {
-    console.log("Selected Item", item);
-  }
 }
+

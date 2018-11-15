@@ -9,14 +9,22 @@
 
 <ion-content padding>
  	<h3>Планирование успешного дня</h3>	
-	<button class="button" color="light"  (click)="addTarget()"><p>Добавить пункт в план</p> <img src="../assets/plus.png"></button>
-
-	<ul>
+	<button id="addTargetButton" class="button" color="light"  (click)="addTarget()"><p>Добавить пункт в план</p> <img src="../assets/plus.png"></button>
+	<div class="line_checkbox"></div>
+	<ul class="animated bounceInUp">
 		<li *ngFor="let item of dayData" >
 			<ion-label>{{item.date.hour}}:{{item.date.minutes}}</ion-label>
 			<ion-checkbox color="primary" ></ion-checkbox>
 			<ion-label>{{item.text}}</ion-label>
 		</li>
 	</ul>
-	
+
 </ion-content>
+
+<div id="blockNoActive"></div>
+<div id="addTarget" class="addTargetOff" >
+
+</div>
+
+
+

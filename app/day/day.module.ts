@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DayPage } from './day.page';
+import { Addtarget } from '../addtarget';
 
 const routes: Routes = [
   {
