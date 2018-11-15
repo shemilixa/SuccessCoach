@@ -57,18 +57,20 @@ ul {
 }
 
 #addTarget{
-	position: absolute;
+	/*position: absolute;*/
 	width: 100%;
-	height: 390px;
+	max-height: 290px;
+	height: 100%;
 	background-color: #ffffff;	
+	overflow-x: auto;
 }
 
 .addTargetOn{
-	bottom: 0px;
+	margin-bottom: 0px;
 }
 
 .addTargetOff{
-	bottom: -390px;
+	margin-bottom: -390px;
 }
 
 

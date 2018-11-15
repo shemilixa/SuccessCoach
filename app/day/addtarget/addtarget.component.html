@@ -1,0 +1,35 @@
+<div class="addTarget">
+	<h3>Название события</h3>
+	<ion-input type="text" name="" placeholder="Здесь будет название"></ion-input>
+
+<!--	<div class="timeSelect">
+		<div class="timeSelectTitle">
+			Время начала
+		</div>
+		<div class="timeSelectSlider">
+			
+		</div>
+	</div>
+
+	<div class="timeSelect">
+		<div class="timeSelectTitle">
+			Время конца
+		</div>
+
+		<div class="timeSelectSlider">
+
+		</div>
+	</div> -->
+
+	<ion-item>
+	  <ion-label>Время начала</ion-label>
+	  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myTimeStart"></ion-datetime>
+	</ion-item>
+
+	<ion-item>
+	  <ion-label>Время конца</ion-label>
+	  <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="myTimeFinish"></ion-datetime>
+	</ion-item>
+
+	<ion-button expand="full" color="primary" >Добавить событие в план</ion-button>
+</div>

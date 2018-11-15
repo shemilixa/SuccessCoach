@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DayPage } from './day.page';
-import { Addtarget } from '../addtarget';
+import { AddtargetComponent } from './addtarget/addtarget.component';
 
 const routes: Routes = [
   {
@@ -22,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DayPage]
+  declarations: [DayPage, AddtargetComponent]
 })
 export class DayPageModule {}
