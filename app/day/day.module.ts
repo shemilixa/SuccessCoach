@@ -4,9 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http/';
+
 
 import { DayPage } from './day.page';
 import { AddtargetComponent } from './addtarget/addtarget.component';
+
 
 const routes: Routes = [
   {
@@ -20,6 +23,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    HttpClientModule,  
     RouterModule.forChild(routes)
   ],
   declarations: [DayPage, AddtargetComponent]

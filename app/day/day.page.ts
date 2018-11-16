@@ -1,5 +1,17 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
+//import { HTTP } from '@ionic-native/http/ngx';
+//import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
+//import { map } from 'rxjs/operator/map';
+
+//import {Observable} from 'rxjs';
+//import { map } from 'rxjs/operators';
+//import 'rxjs/add/operator/map'; 
+
+
 
 @Component({
   selector: 'app-day',
@@ -7,10 +19,32 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./day.page.scss'],
 })
 export class DayPage implements OnInit {
+ getData_s:object={};
+ constructor(private http: HttpClient) { 
 
-  constructor(
-    public actionsheetCtrl: ActionSheetController
-  ) { }
+ }
+ // constructor(private http: HTTP) {}
+
+
+  configUrl = 'assets/data/data.json';
+
+  getConfig() {
+    this.http.get(this.configUrl).subscribe(function(data){
+      console.log(data);
+      //getData(data);
+      return data;
+    });  
+    
+    //return answer;
+  }
+
+  getData(data){
+    this.getData_s = data;
+  }
+
+ 
+
+  //console.dir();
 
   ngOnInit() {
   }
@@ -124,7 +158,9 @@ export class DayPage implements OnInit {
   ];
 
   addTarget(){
-  	//console.log('добавление дела');
+    this.getConfig();
+
+  	console.log(this.getData_s);
   	document.getElementById('blockNoActive').style.width="100%";
   	let bockAddTarget = document.getElementById('addTarget');
   	bockAddTarget.className = "addTargetOn animated bounceInUp";
