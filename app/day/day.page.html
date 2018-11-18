@@ -1,8 +1,8 @@
 <ion-header >
   <ion-toolbar color="primary" >
-  	<img class="logo" src="../assets/logo.png">
+  	<img class="logo" src="../assets/img/logo.png">
     <div class="title">Твой успешный день</div>
-    <img class="burger" src="../assets/burger.png" routerLink="/home" >
+    <img class="burger" src="../assets/img/burger.png" routerLink="/home" >
  	</ion-toolbar>
 
 </ion-header>
@@ -10,13 +10,13 @@
 <ion-content padding>
 	<div class="content">
 		<h3>Планирование успешного дня</h3>	
-		<button id="addTargetButton" class="button" color="light"  (click)="addTarget()"><p>Добавить пункт в план</p> <img src="../assets/plus.png"></button>
+		<button id="addTargetButton" class="button" color="light"  (click)="addTarget()"><p>Добавить пункт в план</p> <img src="../assets/img/plus.png"></button>
 
 		<ul class="animated bounceInUp">
 			<li *ngFor="let item of dayData" >
 				<ion-label>{{item.date.hour}}:{{item.date.minutes}}</ion-label>
 				<a href="">{{item.text}}</a>
-				<img src="../assets/pancil.png">
+				<img src="../assets/img/pancil.png" (click)="editTarget()">
 			</li>
 		</ul>
 	</div>
@@ -25,7 +25,7 @@
 
 <div id="blockNoActive"></div>
 <div id="addTarget" class="addTargetOff" >
-	<app-addtarget></app-addtarget>
+	<app-addtarget [settings]="settings"></app-addtarget>
 </div>
 
 

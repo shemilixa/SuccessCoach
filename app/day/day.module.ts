@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http/';
 
 import { DayPage } from './day.page';
 import { AddtargetComponent } from './addtarget/addtarget.component';
+import { EdittargetComponent } from './edittarget/edittarget.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,6 @@ const routes: Routes = [
     HttpClientModule,  
     RouterModule.forChild(routes)
   ],
-  declarations: [DayPage, AddtargetComponent]
+  declarations: [DayPage, AddtargetComponent, EdittargetComponent]
 })
 export class DayPageModule {}

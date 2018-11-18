@@ -1,9 +1,9 @@
 <ion-header >
   <ion-toolbar color="primary" >
-  	<img class="logo" src="../assets/logo.png">
-    <div class="title">Тренер Успеха</div>
+  	<img class="logo" src="../assets/img/logo.png">
+    <div class="title">{{nameprogect[settings.local]}}</div>
     
-    <img class="burger" src="../assets/burger.png">
+    <img class="burger" src="../assets/img/burger.png">
  	</ion-toolbar>
 
 </ion-header>
@@ -13,7 +13,7 @@
 	<div class="background_man_r"></div>
 	<div>
 	  <ul *ngFor="let item of items">
-	    <li class="elementmenu {{item.active}}" routerLink="/{{item.url}}"  >{{ item.text }}</li>
+	    <li class="elementmenu {{item.active}}" routerLink="/{{item.url}}"  >{{ item.text[settings.local] }}</li>
 	  </ul> 
 	</div>
 

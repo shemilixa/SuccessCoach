@@ -18,12 +18,14 @@ class myHTTPService {
   providers: [myHTTPService],
 })
 export class DayPage implements OnInit {
-  dayData: object = [];
+  settings: any = {};
+  dayData: any = [];
 
-  constructor(private myService: myHTTPService) { } 
+  constructor(private myService: myHTTPService){} 
 
   ngOnInit() {
-    this.myService.getConfig('assets/data/day/data.json').subscribe(data=> this.dayData = data); 
+    this.myService.getConfig('assets/data/settings.main/sttings.json').subscribe(data=> this.settings = data); 
+    this.myService.getConfig('assets/data/day.page/data.json').subscribe(data=> this.dayData = data); 
   }
 
 
@@ -39,4 +41,18 @@ export class DayPage implements OnInit {
 				document.getElementById('blockNoActive').style.width="";  		
   	});
   }
+
+  editTarget(){ 
+    document.getElementById('blockNoActive').style.width="100%";
+    let bockAddTarget = document.getElementById('addTarget');
+    bockAddTarget.className = "addTargetOn animated bounceInUp";
+
+    let blockNoActive = document.getElementById('blockNoActive');
+
+    blockNoActive.addEventListener('click', function(event){
+        bockAddTarget.className = "addTargetOff bounceInDown";
+        document.getElementById('blockNoActive').style.width="";      
+    });
+  }
+
 }

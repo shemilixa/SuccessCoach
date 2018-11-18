@@ -1,0 +1,51 @@
+[
+  {
+    "text": {
+      "ru": "Твой успешный день"
+    },
+    "url": "day",
+    "active": "elementMenuActive"
+  },
+  {
+    "text": {
+      "ru": "Твой успешный год"
+    },
+    "url": "year",
+    "active": "elementMenuActive"
+  },
+  {
+    "text": {
+      "ru": "Выход из стресса"
+    },
+    "url": "stress",
+    "active": "elementMenuActive"
+  },
+  {
+    "text": {
+      "ru": "Вдохновление на день"
+    },
+    "url": "",
+    "active": "elementMenuNoActive"
+  },
+  {
+    "text": {
+      "ru": "Бизнес решение"
+    },
+    "url": "",
+    "active": "elementMenuNoActive"
+  },
+  {
+    "text": {
+      "ru": "Питание"
+    },
+    "url": "",
+    "active": "elementMenuNoActive"
+  },
+  {
+    "text": {
+      "ru": "Общение"
+    },
+    "url": "communication",
+    "active": "elementMenuActive"
+  }
+]

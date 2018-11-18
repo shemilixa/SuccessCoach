@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Input, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-addtarget',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addtarget.component.scss']
 })
 export class AddtargetComponent implements OnInit {
+	@Input() settings: any;
 
-  constructor() { }
+  	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
