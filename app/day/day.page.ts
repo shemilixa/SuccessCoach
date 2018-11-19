@@ -28,21 +28,15 @@ export class DayPage implements OnInit {
     this.myService.getConfig('assets/data/day.page/data.json').subscribe(data=> this.dayData = data); 
   }
 
-
-  addTarget(){  	
-  	document.getElementById('blockNoActive').style.width="100%";
-  	let bockAddTarget = document.getElementById('addTarget');
-  	bockAddTarget.className = "addTargetOn animated bounceInUp";
-
-    let blockNoActive = document.getElementById('blockNoActive');
-
-  	blockNoActive.addEventListener('click', function(event){
-				bockAddTarget.className = "addTargetOff bounceInDown";
-				document.getElementById('blockNoActive').style.width="";  		
-  	});
+  addTarget(){    
+    this.modalTarget()
   }
 
   editTarget(){ 
+    this.modalTarget()    
+  }
+
+  modalTarget(){
     document.getElementById('blockNoActive').style.width="100%";
     let bockAddTarget = document.getElementById('addTarget');
     bockAddTarget.className = "addTargetOn animated bounceInUp";
@@ -54,5 +48,8 @@ export class DayPage implements OnInit {
         document.getElementById('blockNoActive').style.width="";      
     });
   }
+
+
+
 
 }

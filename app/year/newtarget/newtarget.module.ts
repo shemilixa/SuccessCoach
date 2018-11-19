@@ -4,15 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { HttpClientModule } from '@angular/common/http/';
 
-import { YearPage } from './year.page';
-
+import { NewtargetPage } from './newtarget.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: YearPage
+    component: NewtargetPage
   }
 ];
 
@@ -21,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    HttpClientModule, 
     RouterModule.forChild(routes)
   ],
-  declarations: [YearPage]
+  declarations: [NewtargetPage]
 })
-export class YearPageModule {}
+export class NewtargetPageModule {}

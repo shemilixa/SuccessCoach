@@ -1,0 +1,110 @@
+h3{
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	color: #202020;
+	margin: 0 auto 10px;
+}
+
+.button{
+	font-size: 16px;
+	width: 275px;
+	background-color: #d8eeff;
+	color: #282828;
+	border-radius: 5px;
+	height: 38px;
+	margin: 5px auto;
+	display: block;
+}
+
+.button p {
+	line-height: 37px;
+	margin: 0 10px;
+	float: left;
+}
+
+.button img{
+	margin: 8px 10px;
+	float: right;
+}
+
+.content{
+	margin: 0 auto;
+	width: 290px;
+}
+
+ion-label{
+	margin: 10px;
+
+}
+ion-checkbox{
+	top: 5px;
+}
+
+ion-content {
+	li {
+    list-style-type: none; 
+    margin: 5px auto;
+    height: 40px;    
+    position: relative;
+    a{
+	    text-decoration: none;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    width: 180px;
+	    color: #282828;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: -4px 5px;
+    }
+    .pancil{
+    	position: absolute;
+    	top: 8px;
+    }
+	}
+
+	ul {
+		margin: 25px 0;
+		padding-left: 0; 
+	}
+
+}
+
+
+#addTarget{
+  width: 276px;
+  height: 112px;
+  background-color: #ffffff;
+  overflow-x: auto;
+	border-radius: 5px;
+	padding: 20px;
+
+}
+
+.menuElement{
+	margin: 10px 0;
+	color: #44abee;
+	img{
+		margin: 0 10px 0;
+	}
+}
+
+.addTargetOn{
+	position: absolute;
+  top: 180px;
+  left: 50%;
+  margin-left: -148px;
+}
+
+.addTargetOff{
+	margin-bottom: -390px;
+}
+
+
+#blockNoActive{
+	/*width: 100%;*/
+	height: 100%;
+	background-color: #000000;
+	opacity: 0.3;
+	position: fixed;
+}
