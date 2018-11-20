@@ -1,6 +1,10 @@
 <ion-header >
   <ion-toolbar color="primary" >
-  	<img class="logo" src="../assets/img/logo.png">
+  	<ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-img src="../assets/img/return.png"></ion-img>
+      </ion-button>
+    </ion-buttons>
     <div class="title">Твой успешный день</div>
     <img class="burger" src="../assets/img/burger.png" routerLink="/home" >
  	</ion-toolbar>

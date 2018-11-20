@@ -1,5 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NavController } from '@ionic/angular';
+
 
 @Injectable()
 class myHTTPService {
@@ -21,11 +23,18 @@ export class DayPage implements OnInit {
   settings: any = {};
   dayData: any = [];
 
-  constructor(private myService: myHTTPService){} 
+  constructor(
+    private myService: myHTTPService,
+    public navCtrl: NavController
+  ){} 
 
   ngOnInit() {
     this.myService.getConfig('assets/data/settings.main/sttings.json').subscribe(data=> this.settings = data); 
     this.myService.getConfig('assets/data/day.page/data.json').subscribe(data=> this.dayData = data); 
+  }
+
+  goBack() {
+    this.navCtrl.goBack();
   }
 
   addTarget(){    

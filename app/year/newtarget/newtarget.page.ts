@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { File } from '@ionic-native/file/ngx';
 
 @Component({
   selector: 'app-newtarget',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewtargetPage implements OnInit {
 
-  constructor() { }
+  constructor(
+  	public navCtrl: NavController,
+  	private file: File,
+  ) { }
 
   ngOnInit() {
+  }
+
+  goBack() {
+    this.navCtrl.goBack();
+  }
+
+  addNewTarget(){
+  	let data = {
+  			"test": "test"
+  		}
+  	;
+
+  	//console.log(this.File.resolveLocalFilesystemUrl);
+
+  	//this.file.writeFile(this.file.dataDirectory, 'test.json', 'hello,world,', {replace: true});
+  	this.file.createFile('assets/data/year.page/', 'test.json', true);
+
+
   }
 
 }

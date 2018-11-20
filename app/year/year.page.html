@@ -1,6 +1,14 @@
 <ion-header >
+
+
 	<ion-toolbar color="primary" >
-  	<img class="logo" src="../assets/img/return.png" routerLink="/home">
+
+		<ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-img src="../assets/img/return.png"></ion-img>
+      </ion-button>
+    </ion-buttons>
+
     <div class="title">Твой успешный год</div>
     <img class="burger" src="../assets/img/burger.png" routerLink="/home" > 
  	</ion-toolbar>
@@ -26,5 +34,5 @@
 <div id="blockNoActive"></div>
 <div id="addTarget" class="addTargetOff" >
 	<div class="menuElement"><img src="../assets/img/newtarget.png" alt="">Взять шаблон</div>
-	<div class="menuElement" routerLink="/newtarget"><img src="../assets/img/pancil.png" alt=""  >Создать свой пункт</div>
+	<div class="menuElement" (click)="transition('/newtarget')"  ><img src="../assets/img/pancil.png" alt=""  >Создать свой пункт</div>
 </div>
