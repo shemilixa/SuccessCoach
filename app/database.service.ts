@@ -1,89 +1,113 @@
 import { Injectable } from '@angular/core';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
-import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
-import { Platform } from '@ionic/angular';
-
-import { Http } from '@angular/http';
-import { Observable, of, throwError } from 'rxjs';
-import { forkJoin } from 'rxjs';
-
-//import { WindowService } from "windowservice";
-
+import { HTTP } from '@ionic-native/http/ngx';
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
- 	private db: SQLiteObject;
-  private isOpen: boolean;
 
-  constructor(  	
-  	private storage: SQLite,
-  	protected platform : Platform,
+  //private db: any;
+  
+  expenses: any = [];
 
-  	private sqlitePorter: SQLitePorter,  	 
-  	public http: Http,
-  	private nativeStorage: NativeStorage,
-  	//private windowService: WindowService
-  ) { 
+  constructor(
+    public http: HTTP,
+    private sqlite: SQLite
+  ) {
 
-  	if (!this.isOpen) {
-      this.storage = new SQLite();
-      this.storage.create({ name: "dataBase.db", location: "default" }).then((db: SQLiteObject) => {
-        this.db = db;
-        db.executeSql("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, identification INTEGER, name TEXT, lastname text)", []);
-        this.isOpen = true;
-      }).catch((error) => {
-        console.log(error);
-      })
-    }
+   this.sqlite = new SQLite();
 
-  	
+    this.sqlite.create({
+      name: 'db.db',
+      location: 'default'
+    }).then((db:SQLiteObject) => {
+      //this.db = db;  
+
+      db.executeSql('CREATE TABLE IF NOT EXISTS expense(rowid INTEGER PRIMARY KEY, date TEXT, type TEXT, description TEXT, amount INT)', [])
+      .then(res => console.log('Executed SQL'))
+      .catch(e => console.log(e));  
+
+      db.executeSql('INSERT INTO expense VALUES(NULL,?,?,?,?)',['textttt','aaaa','rrrr',111]);
+
+
+      db.executeSql('SELECT * FROM expense ', [])
+        .then(res => {
+          console.log(res);
+          if(res.rows.length>0) {
+            this.expenses = [];
+            for(var i=0; i<res.rows.length; i++) {
+              this.expenses.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,type:res.rows.item(i).type,description:res.rows.item(i).description,amount:res.rows.item(i).amount})
+            }
+            console.log(this.expenses);
+          }
+        });
+
+       //console.log(res.rows);
+       console.log(db);
+
+    }).catch((error) => {
+      console.log(error);
+    }); 
+
   }
 
-	CreateUser(identification: number, name:string, lastname:string){
-    return new Promise ((resolve, reject) => {
-      let sql = "INSERT INTO users (identification, name, lastname) VALUES (?, ?, ?)";
-      this.db.executeSql(sql, [identification, name, lastname]).then((data) =>{
-        resolve(data);
-      }, (error) => {
-        reject(error);
-      });
-    });
+  ngOnInit() {
+
   }
 
-  GetAllUsers(){
-    return new Promise ((resolve, reject) => {
-      this.db.executeSql("SELECT * FROM section", []).then((data) => {
-        let section = [];
-        if (data.rows.length > 0) {
-          for (var i = 0; i < data.rows.length; i++) {
-            section.push({
-              id: data.rows.item(i).id,
-              url: data.rows.item(i).url,
-              action: data.rows.item(i).action
-            });            
-          }          
-        }
-        resolve(section);
-      }, (error) => {
-        reject(error);
-      })
-    })
+  ngDoCheck() {
+    //console.log(this.sqlite);
   }
-
-  DeleteUser(idUser){
-    
-  }
-
-
-
 
   test(){
 
-  	//console.log(this.myDevice);
+  /*return new Promise ((resolve, reject) => {
+    this.db.executeSql('SELECT * FROM section',[]).then((data) =>{
+      let section =[];
+      if (data.rows.length > 0) {
+        for (var i =0; i < data.rows.length; i++) {
+          section.push({
+            master_id: data.rows.item(i).master_id,
+            address: data.rows.item(i).address
+          });
+        }
+      }
+      console.log(section);
+    resolve(section);
+    }, (error) => {
+      reject(error);
+    })
+  });*/
 
-  	console.log('sdadasd');
+
+
+
+
+
+  /*this.sqlite.create({
+    name: 'data.db',
+    location: 'default' // the location field is required
+  })
+  .then((db) => {
+
+    console.log(db);
+
+    db.executeSql('select * from section',{})
+      .then((data) => {
+        console.log(data)
+        console.log(data.rows.length);
+        var auth = data.rows.item;
+        console.log(auth)
+      })
+      .catch(e => {
+        console.log(e);
+      })
+  })
+  .catch(error =>{
+    console.error(error);
+  });*/
+
+    //console.log('sdadasd');
   }
 
 }
