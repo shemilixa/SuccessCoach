@@ -29,6 +29,18 @@ export class HomePage  {
   ) { } 
 
   ngOnInit() {
+
+    this.database.CreateUser(0, 'test', 'test');
+    //this.items = this.database.GetAllUsers();
+
+    this.database.GetAllUsers().then((data: any) => {
+        console.log(data);
+        this.items = data;
+      }, (error) => {
+        console.log(error);
+      })
+
+
     /*this.myService.getConfig('assets/data/settings.main/sttings.json').subscribe(data=> this.settings = data);     
     this.myService.getConfig('assets/data/name.json').subscribe(data=> this.nameprogect = data); 
     this.myService.getConfig('assets/data/home.page/data.json').subscribe(data=> this.items = data); */
